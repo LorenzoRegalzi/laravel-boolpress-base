@@ -7,8 +7,6 @@ use App\post;
 
 class PostController extends Controller
 {
-
-
     /**
      * Display a listing of the resource.
      *
@@ -21,19 +19,13 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
-
-
-
-
-
-
-
     public function published()
     {
         $posts = Post::where('published', '1')->get();
         // dd($posts);
         return view('posts.published', compact('posts'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,9 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $posts = Post::all();
-
-        return view('posts.create', compact('posts'));
+        //
     }
 
     /**
@@ -54,7 +44,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
+        
     }
 
     /**

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PostController@index')->name('post.index');
+// Route::get('/', 'PostController@index')->name('post.index');
+// Route::get('/create', 'PostController@create')->name('post.create');
 
-Route::get('/published', 'PostController@published')->name('post.published');
+Route::get('/published', 'PostController@published')->name('post.published');   //rotta che il controller non prevede e che creiamo noi
+
+
+Route::resource('posts', 'PostController');                                     //qua abbaimo tutte le rotte previste nel controller
