@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->text('img-author');
+            $table->text('img_author');
             $table->string('author', 100);
             $table->text('body');
             $table->boolean('published');
