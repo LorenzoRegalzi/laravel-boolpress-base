@@ -41,9 +41,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $posts = Post::all();
-
-        return view('posts.create', compact('posts'));
+        return view('posts.create');
     }
 
     /**
@@ -54,7 +52,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
+        $data= $request->all();
+        $post= new post;
+        // $post->title = $data['title'];
+        // dd($request->all());
+        $post->fill($data);
+        $post->save();
     }
 
     /**
