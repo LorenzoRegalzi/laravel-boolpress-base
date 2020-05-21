@@ -58,6 +58,8 @@ class PostController extends Controller
         // dd($request->all());
         $post->fill($data);
         $post->save();
+
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**
@@ -68,7 +70,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = post::find($id);
+        return view('posts.show', compact('post'));
     }
 
     /**
